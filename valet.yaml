@@ -6,6 +6,9 @@ description: >-
   posts a dossier to your team.
 category: sales
 
+example:
+  prompt: "Tell me about Vela Robotics — what's their stack?"
+
 story:
   hero: "New account in Airtable → sourced dossier in Slack, in five minutes."
   subheadline: >-
