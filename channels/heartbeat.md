@@ -8,10 +8,10 @@ a dossier to Slack.
 ## What it does
 
 1. Resolve the Accounts table per the SOUL **Phase 1** rules:
-   prefer `ACCOUNTS_BASE_ID` + `ACCOUNTS_TABLE_ID` /
-   `ACCOUNTS_TABLE_NAME` env vars; otherwise auto-discover the
-   first table named `Accounts`/`Companies`/`Customers`/
-   `Prospects`. Cache the resolved IDs into MEMORY.md.
+   prefer `AIRTABLE_BASE_ID` + `AIRTABLE_TABLE_NAME` env vars;
+   otherwise auto-discover the first table named
+   `Accounts`/`Companies`/`Customers`/`Prospects`. Cache the
+   resolved IDs into MEMORY.md.
 2. Read MEMORY.md for `last_seen_record_id` and
    `last_seen_created_time`. List rows in the table sorted by
    `createdTime` descending and take any with `createdTime` newer

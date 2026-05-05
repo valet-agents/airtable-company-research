@@ -19,7 +19,7 @@ This agent uses the OAuth variant of the Airtable MCP and the keyless Parallel M
 ### External Setup
 
 1. After deploy, complete the Airtable OAuth grant in the dashboard. Authorize the workspace and base that contains your Accounts (or Companies) table.
-2. Optional but recommended: set `ACCOUNTS_BASE_ID` and `ACCOUNTS_TABLE_ID` (or `ACCOUNTS_TABLE_NAME`) env vars on the agent so the heartbeat skips the discovery step. Without them, the agent picks the first table it finds named `Accounts`, `Companies`, `Customers`, or `Prospects`.
+2. Optional but recommended: set `AIRTABLE_BASE_ID` and `AIRTABLE_TABLE_NAME` env vars on the agent so the heartbeat skips the discovery step. Without them, the agent picks the first table it finds named `Accounts`, `Companies`, `Customers`, or `Prospects`.
 3. Invite the agent's Slack bot to whichever channel(s) you want new-account dossiers in. The agent posts to every channel it's a member of — invite it to one focused channel, or several. If the bot has not been invited anywhere, the dossier is sent as a DM to the workspace install user with a one-line nudge to invite it somewhere.
 4. Invite the bot to any additional channels where teammates should be able to @mention it for ad-hoc company research (e.g. a sales channel for *"tell me about Vela Robotics — what's their stack?"* follow-ups).
 5. The first heartbeat fire after deploy seeds the watermark to the most recent existing row — it does not dossier the backlog. Add a new row to the Accounts table to smoke-test the flow, or @mention the bot in Slack with a research question to exercise the Slack + Parallel path immediately.
@@ -27,6 +27,6 @@ This agent uses the OAuth variant of the Airtable MCP and the keyless Parallel M
 ## Customizing
 
 - **Change the heartbeat cadence**: edit the `every` value on the `heartbeat` channel in `valet.yaml` (e.g. `1m` for low-volume teams that want near-real-time, `15m` for high-volume teams that want batched dossiers), then redeploy.
-- **Pin the table explicitly**: set `ACCOUNTS_BASE_ID` + `ACCOUNTS_TABLE_ID` (preferred) or `ACCOUNTS_TABLE_NAME` on the agent to skip discovery and avoid ambiguity when multiple tables match.
+- **Pin the table explicitly**: set `AIRTABLE_BASE_ID` + `AIRTABLE_TABLE_NAME` on the agent to skip discovery and avoid ambiguity when multiple tables match.
 - **Tune dossier sections**: edit the *Phase 4: Compose the dossier* template in `SOUL.md` to add or drop sections (e.g. add a `*Hiring*` block, drop `*Key contacts*` if you only care about firmographics).
 - **Cap dossiers per fire**: change the `5 per fire` cap in *Phase 2* of the SOUL workflow to bound research cost on bursty days.

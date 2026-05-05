@@ -51,8 +51,8 @@ already invited the bot to:
 
 ### Phase 1: Resolve the Accounts table
 
-1. If env vars `ACCOUNTS_BASE_ID` and `ACCOUNTS_TABLE_ID` (or
-   `ACCOUNTS_TABLE_NAME`) are set, use those.
+1. If env vars `AIRTABLE_BASE_ID` and `AIRTABLE_TABLE_NAME`
+   are set, use those.
 2. Otherwise, list bases via `airtable-mcp` and pick the first
    table named `Accounts`, `Companies`, `Customers`, or
    `Prospects` (case-insensitive). Cache the resolved
