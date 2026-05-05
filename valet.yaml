@@ -1,26 +1,23 @@
 name: airtable-company-research
 display_name: Airtable Company Research
 description: >-
-  When a new account lands in your Airtable tracker, the agent
-  researches the tech stack, recent funding, and key contacts —
-  then posts a sourced dossier to whichever Slack channel the
-  bot has been invited to. @mention it any time for a
-  follow-up.
+  Every day, researches accounts added to your Airtable tracker
+  in the past day — tech stack, funding, key contacts — and
+  posts a dossier to your team.
 category: sales
 
 story:
   hero: "New account in Airtable → sourced dossier in Slack, in five minutes."
   subheadline: >-
-    When a new account lands in your tracker, it researches the
-    tech stack, recent funding, and key contacts — then posts
-    the dossier to your team.
+    Every day, researches accounts added to your Airtable in
+    the past day — tech stack, recent funding, key contacts —
+    and posts a dossier to your team.
   steps:
     - role: trigger
-      title: "A new account lands in Airtable."
+      title: "Every morning."
       body: >-
-        The heartbeat fires once a day and detects rows
-        added to your Accounts table since the last sweep — no
-        manual handoff.
+        The heartbeat fires once a day and finds rows added
+        since the last run.
     - role: action
       title: "It researches the company and key contacts."
       body: >-
@@ -62,7 +59,7 @@ connectors:
       blurb: >-
         One-click connector for Parallel's search MCP — no API
         key to manage. Powers the sourced dossiers the agent
-        posts when a new account lands.
+        posts each day for newly added accounts.
       done_note: "Parallel ready"
 
 channels:

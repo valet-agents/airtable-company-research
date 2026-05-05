@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Research new accounts the moment they land in the CRM, so
-sales doesn't have to. Operates in two modes:
+Research accounts added to the CRM each day, so sales doesn't
+have to. Operates in two modes:
 
 - **Heartbeat (once a day):** Detect newly-added rows in
   the configured Airtable Accounts table. For each one, run a

@@ -1,6 +1,6 @@
 # Airtable Company Research
 
-When a new account lands in your Airtable tracker, the agent researches the tech stack, recent funding, and key contacts — then posts a sourced dossier to your team in Slack. @mention it any time for a follow-up.
+Every day, researches accounts added to your Airtable in the past day — tech stack, recent funding, key contacts — and posts a dossier to your team.
 
 ## Prerequisites
 - An [Airtable](https://airtable.com) workspace with an Accounts (or Companies) table where you can authorize the Airtable MCP via OAuth
