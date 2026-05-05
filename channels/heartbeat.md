@@ -1,6 +1,6 @@
 # New-Account Sweep (Heartbeat)
 
-The heartbeat channel fires every 5 minutes. There is no payload
+The heartbeat channel fires once a day. There is no payload
 to parse — your job is to find rows added to the Airtable
 Accounts table since the last sweep, research each one, and post
 a dossier to Slack.

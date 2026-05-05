@@ -18,7 +18,7 @@ story:
     - role: trigger
       title: "A new account lands in Airtable."
       body: >-
-        The heartbeat fires every 5 minutes and detects rows
+        The heartbeat fires once a day and detects rows
         added to your Accounts table since the last sweep — no
         manual handoff.
     - role: action
@@ -82,5 +82,5 @@ channels:
       done_note: "Bot ready — invite it to a channel"
 
   - type: heartbeat
-    every: 5m
-    description: "Sweeps the Airtable Accounts table every 5 minutes for newly-added rows to research."
+    every: 24h
+    description: "Sweeps the Airtable Accounts table once a day for newly-added rows to research."

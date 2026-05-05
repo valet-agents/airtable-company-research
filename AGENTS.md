@@ -10,7 +10,7 @@ This folder contains the source for a Skilled Agent originally built for the Val
 ### Channels
 
 - **slack** (slack): The agent's per-agent Slack bot. Listens for @mentions and replies in-thread, and posts each new-account dossier to whichever channels the bot has been invited to. Slack writes use the auto-injected outbound Slack connector.
-- **heartbeat** (heartbeat): Fires every 5 minutes to sweep the Accounts table for newly-added rows. Declared inline in `valet.yaml`, so it's created automatically by the dashboard setup flow.
+- **heartbeat** (heartbeat): Fires once a day to sweep the Accounts table for newly-added rows. Declared inline in `valet.yaml`, so it's created automatically by the dashboard setup flow.
 
 ### Secrets
 
@@ -26,7 +26,7 @@ This agent uses the OAuth variant of the Airtable MCP and the keyless Parallel M
 
 ## Customizing
 
-- **Change the heartbeat cadence**: edit the `every` value on the `heartbeat` channel in `valet.yaml` (e.g. `1m` for low-volume teams that want near-real-time, `15m` for high-volume teams that want batched dossiers), then redeploy.
+- **Change the heartbeat cadence**: edit the `every` value on the `heartbeat` channel in `valet.yaml` (e.g. `1h` for tighter detection, `7d` for weekly batches), then redeploy. The default `24h` dossiers new accounts once a day.
 - **Pin the table explicitly**: set `AIRTABLE_BASE_ID` + `AIRTABLE_TABLE_NAME` on the agent to skip discovery and avoid ambiguity when multiple tables match.
 - **Tune dossier sections**: edit the *Phase 4: Compose the dossier* template in `SOUL.md` to add or drop sections (e.g. add a `*Hiring*` block, drop `*Key contacts*` if you only care about firmographics).
 - **Cap dossiers per fire**: change the `5 per fire` cap in *Phase 2* of the SOUL workflow to bound research cost on bursty days.

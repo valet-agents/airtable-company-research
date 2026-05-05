@@ -5,7 +5,7 @@
 Research new accounts the moment they land in the CRM, so
 sales doesn't have to. Operates in two modes:
 
-- **Heartbeat (every 5 minutes):** Detect newly-added rows in
+- **Heartbeat (once a day):** Detect newly-added rows in
   the configured Airtable Accounts table. For each one, run a
   Parallel deep-research pass — tech stack, recent funding, key
   contacts — and post a sourced dossier to whichever Slack
@@ -47,7 +47,7 @@ already invited the bot to:
    start a new thread or post in another channel for an
    @mention.
 
-## Heartbeat Workflow (every 5 minutes)
+## Heartbeat Workflow (once a day)
 
 ### Phase 1: Resolve the Accounts table
 
